@@ -291,13 +291,13 @@ header ul {
 .faq {
   margin-bottom: 100px;
 }
-.faq .faq-item {
+.faq .faq-item-title-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
 }
-.faq .faq-item-text {
+.faq .faq-item-title-text .faq-item-text {
   font-weight: 600;
 }
 .faq .faq-item-text-hidden {
@@ -312,6 +312,7 @@ header ul {
   height: 670px;
   border: none;
   border-radius: 100px;
+  filter: grayscale(100%);
 }
 
 footer {

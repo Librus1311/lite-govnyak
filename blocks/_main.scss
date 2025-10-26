@@ -153,20 +153,19 @@
 .faq{
     margin-bottom: 100px;
 
-    .faq-item{
+    .faq-item-title-text{
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         margin-top: 30px;
 
-        &-text{
+        .faq-item-text{
             font-weight: 600;
         }
-
-        &-text-hidden{
-            margin-top: 20px;
-        }
+    }
+    .faq-item-text-hidden{
+        margin-top: 20px;
     }
 }
 
@@ -181,5 +180,7 @@
 
         border: none;
         border-radius: 100px;
+
+        filter: grayscale(100%);
     }
 }
