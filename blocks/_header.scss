@@ -1,0 +1,9 @@
+@use '../stuff/mixins' as *;
+
+header{
+    margin: 40px 0;
+
+    ul{
+        @include flex-center(row, space-between, center, 110px)
+    }
+}

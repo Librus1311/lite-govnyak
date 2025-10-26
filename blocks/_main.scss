@@ -1,0 +1,185 @@
+// TOP SECTION
+
+@use '../stuff/mixins' as *;
+
+.top-section{
+    margin-top: 20px;
+    margin-bottom: 100px;
+    
+    @include flex-center(row, center, center, 20px);
+
+    .top-section-block{
+        @include flex-center(column, center, center, 40px);
+
+        @include big-block;
+
+        padding: 50px;
+
+        &-text{
+            @include flex-center(column, center, center, 5px)
+        }
+    }
+
+    &-img{
+        @include big-block;
+
+        img{
+            height: 600px;
+        }
+    }
+}
+
+// FEST SECTION
+
+.fest{
+    margin-bottom: 100px;
+
+    .fest-wrap{
+        @include flex-center(row, space-between, center, 20px);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        &-block{
+            padding: 50px;
+
+            @include flex-center(column, center, center, 30px);
+            height: 364px;
+            width: 610px;
+
+            span{
+                font-weight: 700;
+            }
+        }
+
+        &-img{
+            img{
+                width: 610px;
+                height: 364px;
+            }
+        }
+    }
+}
+
+// VIDEO
+
+.video{
+    @include flex-center(row, center, center, 20px);
+
+    border-radius: 100px;
+
+    margin-bottom: 60px;
+}
+
+// PROGRAMM
+
+.programm{
+    margin-bottom: 100px;
+
+    &-wrap{
+        @include flex-center(column, center, center, 20px);
+
+        &-date{
+            @include flex-center(row, flex-start, center, 50px);
+
+            @include mid-block;
+
+            li{
+                padding: 12px;
+            }
+
+            span{
+                margin-left: 50px;
+            }
+        }
+    }
+}
+
+// TICKETS
+
+.tickets{
+    margin-bottom: 100px;
+
+    &-wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        margin-bottom: 50px;
+
+        &-date{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 30px;
+
+            @include min-block;
+
+            .tickets-date-text h4{
+                margin-bottom: 10px;
+            }
+
+            .tickets-date-ticket{
+                @include flex-center(column, flex-start, stretch, 30px);
+
+                width: 100%;
+
+                &-person{
+                    @include flex-center(row, space-between, flex-start, 30px);
+
+                    .tickets-date-ticket-text h4{
+                        margin-bottom: 10px;
+                    }
+
+                    .tickets-date-ticket-count{
+                        @include flex-center(row, center, flex-start, 10px);
+                        gap: 10px;
+
+                        p{
+                            margin-top: 3px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// FAQ
+
+.faq{
+    margin-bottom: 100px;
+
+    .faq-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 30px;
+
+        &-text{
+            font-weight: 600;
+        }
+
+        &-text-hidden{
+            margin-top: 20px;
+        }
+    }
+}
+
+// CONTACTS
+
+.contacts{
+    margin-bottom: 100px;
+
+    .map{
+        width: 100%;
+        height: 670px;
+
+        border: none;
+        border-radius: 100px;
+    }
+}

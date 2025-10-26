@@ -1,0 +1,135 @@
+*{
+    font-family: "Monserrat", sans-serif;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    max-width: 1240px;
+    
+    margin: 0 auto;
+}
+
+.container-big{
+    max-width: 1340px;
+
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+// TEXT
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.navbar-link{
+    transition: 0.5s;
+}
+
+.navbar-link:hover{
+    color: var(--color-red);
+}
+
+h3{
+    font-size: 30px;
+    font-weight: 600;
+
+    color: var(--color-red);
+}
+
+h4{
+    font-weight: 600;
+}
+
+p, h4, li, a{
+    font-size: 20px;
+}
+
+.title-section{
+    margin-bottom: 50px;
+
+    text-align: center;
+    font-size: 30px;
+}
+
+// BORDER
+
+.left-cor{
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.right-cor{
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.mid-cor{
+    border-radius: 100px;
+}
+
+.bg{
+    background: var(--color-pink);
+}
+
+// BTNS
+
+.buy{
+    display: block;
+
+    margin: 0 auto;
+    padding: 20px 30px;
+
+    background: var(--color-red);
+    color: var(--color-pink);
+
+    font-size: 20px;
+
+    border-radius: 50px;
+    border: none;
+
+    transition: 0.5s;
+}
+
+.buy:hover{
+    box-shadow: 0 0 20px 5px var(--color-red);
+}
+
+.buy-link{
+    color: var(--color-pink);
+}
+
+.faq-item-arrow,
+.switch,
+.ticket-count,
+.buy{
+    cursor: pointer;
+    border: none;
+}
+
+.ticket-count{
+    background: var(--color-pink);
+}
+
+// OTHER
+
+.logo-pic{
+    width: 85px;
+    height: 60px;
+}
+
+.close{
+    display: none;
+}
+
+.open{
+    display: block;
+}

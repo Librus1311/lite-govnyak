@@ -1,0 +1,25 @@
+@use '../stuff/mixins' as *;
+
+footer{
+padding-top: 50px;
+padding-bottom: 150px;
+
+    .footer-wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .footer-logo{
+            display: flex;
+            align-items: center;
+            gap: 190px;
+
+        }
+
+        .footer-links{
+            @include flex-center;
+            gap: 10px;
+        }
+    }   
+}
+
