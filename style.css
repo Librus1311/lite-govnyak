@@ -2,6 +2,7 @@
   --color-black: #1D1D1D;
   --color-pink: #FFDFF1;
   --color-red: #D32B2B;
+  --color-white: white;
 }
 
 * {
@@ -9,6 +10,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  padding: 0 10px;
 }
 
 .container {
@@ -19,7 +24,20 @@
 .container-big {
   max-width: 1340px;
   margin: 0 auto;
-  padding: 0 50px;
+}
+
+.big-block {
+  width: 50%;
+}
+
+.mid-block {
+  width: 100%;
+  padding: 50px;
+}
+
+.min-block {
+  width: 33%;
+  padding: 50px;
 }
 
 li {
@@ -49,7 +67,10 @@ h4 {
   font-weight: 600;
 }
 
-p, h4, li, a {
+p,
+h4,
+li,
+a {
   font-size: 20px;
 }
 
@@ -57,6 +78,14 @@ p, h4, li, a {
   margin-bottom: 50px;
   text-align: center;
   font-size: 30px;
+}
+
+img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .left-cor {
@@ -114,12 +143,15 @@ p, h4, li, a {
   height: 60px;
 }
 
-.close {
-  display: none;
+.hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
 }
 
-.open {
-  display: block;
+.visible {
+  opacity: 1;
+  min-height: 100px;
 }
 
 header {
@@ -133,13 +165,89 @@ header ul {
   gap: 110px;
 }
 
+.navbar-burger {
+  display: none;
+}
+.navbar-burger .navbar-burger-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.navbar-burger .navbar-burger-links {
+  background: var(--color-white);
+  position: absolute;
+  top: -100%;
+  z-index: 100;
+  margin: 30px auto 0;
+  width: 100%;
+  height: 180px;
+  transition: top 0.5s ease-in-out;
+}
+.navbar-burger .navbar-burger-links ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.navbar-burger .navbar-burger-links.active {
+  top: 90px;
+}
+
+.burger-menu-btn {
+  display: block;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.burger-menu-btn::before,
+.burger-menu-btn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+  background: var(--color-black);
+}
+
+.burger-menu-btn::before {
+  top: 0;
+  box-shadow: 0 11px 0 var(--color-black);
+  transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+}
+
+.burger-menu-btn::after {
+  bottom: 0;
+  transition: bottom 0.3s 0.15s, transform 0.3s;
+}
+
+.burger-menu-btn.active::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+}
+
+.burger-menu-btn.active::after {
+  bottom: 11px;
+  transform: rotate(-45deg);
+  transition: bottom 0.3s, transform 0.3s 0.15s;
+}
+
 .top-section {
   margin-top: 20px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
   gap: 20px;
 }
 .top-section .top-section-block {
@@ -148,8 +256,6 @@ header ul {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  width: 610px;
-  height: 600px;
   padding: 50px;
 }
 .top-section .top-section-block-text {
@@ -160,11 +266,46 @@ header ul {
   gap: 5px;
 }
 .top-section-img {
-  width: 610px;
-  height: 600px;
+  flex: 1;
 }
 .top-section-img img {
-  height: 600px;
+  height: 100%;
+}
+
+.top-section-mobile {
+  display: none;
+  padding: 25px 20px;
+  margin-bottom: 40px;
+}
+.top-section-mobile-pic {
+  width: 100%;
+}
+.top-section-mobile-pic img {
+  width: 100%;
+}
+.top-section-mobile-text {
+  align-self: flex-start;
+}
+.top-section-mobile-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  height: 45%;
+}
+.top-section-mobile-btn-btn {
+  width: 50%;
+}
+.top-section-mobile-btn-btn .buy {
+  margin-left: 0;
+}
+.top-section-mobile-btn-img {
+  width: 50%;
+}
+.top-section-mobile-btn-img img {
+  width: 100%;
+  height: 100%;
 }
 
 .fest {
@@ -176,26 +317,26 @@ header ul {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
 }
 .fest .fest-wrap-block {
-  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding: 50px;
   height: 364px;
-  width: 610px;
+  width: 50%;
 }
 .fest .fest-wrap-block span {
   font-weight: 700;
 }
+.fest .fest-wrap-img {
+  width: 50%;
+}
 .fest .fest-wrap-img img {
-  width: 610px;
   height: 364px;
+  width: 100%;
 }
 
 .video {
@@ -224,11 +365,9 @@ header ul {
   justify-content: flex-start;
   align-items: center;
   gap: 50px;
-  width: 100%;
-  padding: 50px;
 }
 .programm-wrap-date li {
-  padding: 12px;
+  padding: 12px 12px 12px 0;
 }
 .programm-wrap-date span {
   margin-left: 50px;
@@ -239,6 +378,7 @@ header ul {
 }
 .tickets-wrap {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -250,9 +390,6 @@ header ul {
   justify-content: space-between;
   align-items: start;
   gap: 30px;
-  width: 400px;
-  height: 450px;
-  padding: 50px;
 }
 .tickets-wrap-date .tickets-date-text h4 {
   margin-bottom: 10px;
@@ -293,8 +430,10 @@ header ul {
 }
 .faq .faq-item-title-text {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0px;
   margin-top: 30px;
 }
 .faq .faq-item-title-text .faq-item-text {
@@ -302,6 +441,7 @@ header ul {
 }
 .faq .faq-item-text-hidden {
   margin-top: 20px;
+  transition: opacity 1s ease, max-height 0.3s ease;
 }
 
 .contacts {
@@ -321,11 +461,15 @@ footer {
 }
 footer .footer-wrap {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0px;
 }
 footer .footer-wrap .footer-logo {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 190px;
 }
@@ -334,6 +478,135 @@ footer .footer-wrap .footer-links {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0px;
   gap: 10px;
+}
+footer .footer-logo-mobile {
+  display: none;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  h3 {
+    font-size: 20px;
+  }
+  p, h4, li, a {
+    font-size: 20px;
+  }
+  header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+  }
+  .min-block, .mid-block {
+    width: 100%;
+    padding: 30px;
+  }
+  .tickets-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .tickets-wrap-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .tickets-wrap-date span {
+    margin-left: 30px;
+  }
+  .footer-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-wrap .footer-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+  }
+}
+@media (max-width: 800px) {
+  h3 {
+    font-size: 18px;
+  }
+  p, h4, li, a {
+    font-size: 16px;
+  }
+  .buy {
+    padding: 18px 20px;
+  }
+  .mid-block, .min-block {
+    padding: 40px;
+  }
+  .switch {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar-burger {
+    display: block;
+  }
+  .top-section {
+    display: none;
+  }
+  .top-section-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .fest-wrap-img {
+    display: none;
+  }
+  .fest .fest-wrap-block {
+    width: 100%;
+  }
+  .programm-wrap-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .programm-wrap-date span {
+    margin-left: 10px;
+  }
+  .tickets-wrap-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .footer-logo .logo-pic {
+    display: none;
+  }
+  footer .container .footer-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  footer .container .footer-logo-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-top: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

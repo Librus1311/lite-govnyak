@@ -10,21 +10,3 @@
     align-items: $align;
     gap: $gap;
 }
-
-@mixin big-block {
-    width: 610px;
-    height: 600px;
-}
-
-@mixin mid-block {
-    width: 100%;
-
-    padding: 50px;
-}
-
-@mixin min-block {
-    width: 400px;
-    height: 450px;
-
-    padding: 50px;
-}

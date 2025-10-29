@@ -1,0 +1,142 @@
+@use 'mixins'as *;
+
+@media (max-width: 1100px) {
+
+    h3{
+        font-size: 20px;
+    }
+
+    p, h4,  li, a {
+        font-size: 20px;
+    }
+
+    header{
+        ul {
+            @include flex-center(row, space-between, center, 5%)
+        }
+    }
+    
+
+    .min-block, .mid-block{
+        width: 100%;
+        padding: 30px;
+    }
+
+    // .container {
+    //     // margin: 0 auto;
+    //     max-width: 734px;
+    //     padding: 0 50px;
+    // }
+
+    // .container-big {
+    //     max-width: 834px;
+    //     padding: 0 24px;
+    // }
+
+    // .big-block {
+    //     height: 356px;
+    // }
+
+
+    .tickets-wrap{
+        @include flex-center( column, center, center, 20px);
+
+        &-date{
+            @include flex-center(row, center, center, 40px);
+
+            span{
+            margin-left: 30px;
+        }
+        }
+    }
+
+    .footer-wrap{
+        @include flex-center(column, center, center, 20px);
+
+        .footer-logo{
+            @include flex-center(row, space-between, center);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    h3{
+        font-size: 18px;
+    }
+
+    p, h4,  li, a {
+        font-size: 16px;
+    }
+
+    .buy{
+        padding: 18px 20px;
+    }
+
+    .mid-block, .min-block{
+        padding: 40px;
+    }
+
+    .switch{
+        display: none;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .navbar-burger{
+        display: block;
+    }
+
+    .top-section{
+        display: none;
+    }
+
+    .top-section-mobile{
+        @include flex-center(column, space-between, center, 20px);
+
+        width: 100%;
+    }
+
+    .fest-wrap-img{
+        display: none;
+    }
+
+    .fest{
+        .fest-wrap-block{
+            width: 100%;
+        }
+    }
+    
+    .programm-wrap-date{
+        @include flex-center(column, flex-start, flex-start, 20px);
+
+        span{
+            margin-left: 10px;
+        }
+    }
+
+    .tickets-wrap-date{
+        @include flex-center(column, flex-start, flex-start, 20px);
+    }
+
+    .footer-logo{
+        .logo-pic{
+            display: none;
+        }
+    }
+
+    footer{
+        .container{
+            .footer-wrap{
+                @include flex-center(column, center, center, 20px)
+            }
+
+            .footer-logo-mobile{
+                @include flex-center(row, center, center);
+
+                margin-top: 20px;
+            }
+        }
+    }
+}
