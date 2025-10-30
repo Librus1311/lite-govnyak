@@ -566,7 +566,7 @@ footer .footer-logo-mobile {
   .min-block,
   .mid-block {
     width: 100%;
-    padding: 30px;
+    padding: 30px 45px;
   }
   .container {
     margin: 0 auto;
@@ -590,6 +590,10 @@ footer .footer-logo-mobile {
     justify-content: center;
     align-items: center;
     gap: 40px;
+  }
+  .buy-form {
+    top: 30%;
+    height: 60%;
   }
   .bg .footer-wrap {
     display: flex;
@@ -669,6 +673,10 @@ footer .footer-logo-mobile {
   }
   .tickets-wrap-date .ticket-count {
     margin-top: 0;
+  }
+  .buy-form {
+    top: 30%;
+    height: 50%;
   }
   .footer-logo .logo-pic {
     display: none;

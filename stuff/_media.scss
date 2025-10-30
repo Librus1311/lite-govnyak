@@ -23,7 +23,7 @@
     .min-block,
     .mid-block {
         width: 100%;
-        padding: 30px;
+        padding: 30px 45px;
     }
 
     .container {
@@ -45,6 +45,11 @@
         &-date {
             @include flex-center(row, center, center, 40px);
         }
+    }
+
+    .buy-form{
+        top: 30%;
+        height: 60%;
     }
 
     .bg {
@@ -129,6 +134,11 @@
         .ticket-count{
             margin-top: 0;
         }
+    }
+    
+    .buy-form{
+        top: 30%;
+        height: 50%;
     }
 
     .footer-logo {
