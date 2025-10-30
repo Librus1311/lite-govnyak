@@ -6,8 +6,28 @@
     margin: 0;
 }
 
-body{
+body {
     padding: 0 10px;
+}
+
+body.filter{
+    filter: brightness(70%);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный чёрный */
+    z-index: 1;
+    /* Ниже формы, но выше контента */
+    display: none;
+    /* Скрыт по умолчанию */
 }
 
 .container {
@@ -22,17 +42,17 @@ body{
     margin: 0 auto;
 }
 
-.big-block{
+.big-block {
     width: 50%;
 }
 
-.mid-block{
+.mid-block {
     width: 100%;
 
     padding: 50px;
 }
 
-.min-block{
+.min-block {
     width: 33%;
 
     padding: 50px;
@@ -82,14 +102,14 @@ a {
     font-size: 30px;
 }
 
-img{
+img {
     // object-fit: contain;
     width: 100%;
     height: 100%;
     display: block;
 }
 
-.faq-item-arrow-switch{
+.faq-item-arrow-switch {
     width: 30px;
     height: 15px;
 }

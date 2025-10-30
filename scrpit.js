@@ -47,9 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const buyBtn = document.getElementById('buy-hook');
 const buyForm = document.querySelector('.buy-form');
+const overlay = document.getElementById('overlay')
+
+
+
 
 buyBtn.addEventListener('click', () => {
     buyForm.classList.add('active')
+    overlay.style.display = 'block'
 })
 
 // Закрываем при клике вне формы
@@ -59,6 +64,9 @@ document.addEventListener('click', (event) => {
     !buyBtn.contains(event.target)
   ) {
     buyForm.classList.remove('active');
+    overlay.style.display = 'none'
+
+
   }
 });
 

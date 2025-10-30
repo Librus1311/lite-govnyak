@@ -240,6 +240,8 @@
 
 .buy-form.active {
     @include flex-center(column, center, center, 30px);
+
+    z-index: 2;
 }
 
 
