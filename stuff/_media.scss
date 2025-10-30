@@ -125,6 +125,10 @@
 
     .tickets-wrap-date {
         @include flex-center(column, flex-start, flex-start, 20px);
+        
+        .ticket-count{
+            margin-top: 0;
+        }
     }
 
     .footer-logo {

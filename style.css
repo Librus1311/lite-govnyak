@@ -138,6 +138,8 @@ img {
 }
 
 .ticket-count {
+  margin-top: 2px;
+  font-size: 20px;
   background: var(--color-pink);
 }
 
@@ -664,6 +666,9 @@ footer .footer-logo-mobile {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
+  }
+  .tickets-wrap-date .ticket-count {
+    margin-top: 0;
   }
   .footer-logo .logo-pic {
     display: none;

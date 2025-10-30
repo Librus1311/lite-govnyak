@@ -8,9 +8,44 @@ menuIcon.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
+// TICKET COUNT
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Находим все счётчики на странице
+  const counters = document.querySelectorAll('.tickets-date-ticket-count');
+  
+  counters.forEach(counter => {
+    const minusBtn = counter.querySelector('.switch-minus');
+    const plusBtn = counter.querySelector('.switch-plus');
+    const valueEl = counter.querySelector('.ticket-value');
+    
+    // Начальное значение берём из текста элемента
+    let count = parseInt(valueEl.textContent) || 0;
+    
+    // Функция обновления отображения
+    function updateDisplay() {
+      valueEl.textContent = count;
+    }
+    
+    // Обработчик для кнопки «−»
+    minusBtn.addEventListener('click', function() {
+      if (count > 0) {
+        count--;
+        updateDisplay();
+      }
+    });
+    
+    // Обработчик для кнопки «+»
+    plusBtn.addEventListener('click', function() {
+      count++;
+      updateDisplay();
+    });
+  });
+});
+
 // BUY FORM
 
-const buyBtn = document.getElementById('buy');
+const buyBtn = document.getElementById('buy-hook');
 const buyForm = document.querySelector('.buy-form');
 
 buyBtn.addEventListener('click', () => {
