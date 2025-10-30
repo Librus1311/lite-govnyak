@@ -81,11 +81,14 @@ a {
 }
 
 img {
-  -o-object-fit: contain;
-     object-fit: contain;
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.faq-item-arrow-switch {
+  width: 30px;
+  height: 15px;
 }
 
 .left-cor {
@@ -315,7 +318,7 @@ header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
 }
 .fest .fest-wrap-block {
@@ -325,7 +328,6 @@ header ul {
   align-items: center;
   gap: 30px;
   padding: 50px;
-  height: 364px;
   width: 50%;
 }
 .fest .fest-wrap-block span {
@@ -335,18 +337,39 @@ header ul {
   width: 50%;
 }
 .fest .fest-wrap-img img {
-  height: 364px;
+  height: 100%;
   width: 100%;
 }
 
 .video {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   border-radius: 100px;
   margin-bottom: 60px;
+}
+.video .video-pic {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.video .video-pic .active {
+  opacity: 1;
+}
+.video .video-pic img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .programm {
@@ -374,6 +397,7 @@ header ul {
 }
 
 .tickets {
+  position: relative;
   margin-bottom: 100px;
 }
 .tickets-wrap {
@@ -423,6 +447,41 @@ header ul {
 .tickets-wrap-date .tickets-date-ticket-person .tickets-date-ticket-count p {
   margin-top: 3px;
   font-weight: 600;
+}
+
+.buy-form {
+  display: none;
+  padding: 50px;
+  width: 55%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  right: 23%;
+  background: var(--color-white);
+}
+.buy-form .buy-form-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.buy-form .buy-form-list input {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-pink);
+  color: var(--color-black);
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+}
+
+.buy-form.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .faq {
@@ -489,7 +548,10 @@ footer .footer-logo-mobile {
   h3 {
     font-size: 20px;
   }
-  p, h4, li, a {
+  p,
+  h4,
+  li,
+  a {
     font-size: 20px;
   }
   header ul {
@@ -497,11 +559,21 @@ footer .footer-logo-mobile {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 5%;
+    gap: 1%;
   }
-  .min-block, .mid-block {
+  .min-block,
+  .mid-block {
     width: 100%;
     padding: 30px;
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  .container-big {
+    max-width: 840px;
+    padding: 0 20px;
   }
   .tickets-wrap {
     display: flex;
@@ -517,35 +589,37 @@ footer .footer-logo-mobile {
     align-items: center;
     gap: 40px;
   }
-  .tickets-wrap-date span {
-    margin-left: 30px;
-  }
-  .footer-wrap {
+  .bg .footer-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
   }
-  .footer-wrap .footer-logo {
+  .bg .footer-wrap .footer-logo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 0px;
+    width: 100%;
   }
 }
 @media (max-width: 800px) {
   h3 {
     font-size: 18px;
   }
-  p, h4, li, a {
+  p,
+  h4,
+  li,
+  a {
     font-size: 16px;
   }
   .buy {
     padding: 18px 20px;
   }
-  .mid-block, .min-block {
+  .mid-block,
+  .min-block {
     padding: 40px;
   }
   .switch {

@@ -1,41 +1,3 @@
-
-//     // Меняем направление анусного змея
-//     if (content.classList.contains('active')) {
-//         arrow.src = 'img/Arrow up.svg';
-//     } else {
-//         arrow.src = 'img/Arrow down.svg';
-//     }
-//     })
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const faqContainer = document.querySelector('.faq-wrap')
-
-//     faqContainer.addEventListener('click', (e) => {
-//         // const openText = e.target.closest('.faq-item-title-text')
-
-//         // if(!openText) return
-
-//         // const group = openText.parentElement
-//         // const toggleElement = group.querySelector('.faq-item-text-hidden')
-
-//         function toggleElement(button){
-            
-//             const block = button.closest('.faq-item')
-//             const dropText = block.querySelector('.faq-item-text-hidden')
-
-//             if (dropText.classList.contains('hidden')) {
-//                 dropText.classList.remove('hidden')
-//                 dropText.classList.add('active')
-//             } else {
-//                 dropText.classList.remove('active')
-//                 dropText.classList.add('hidden')
-//             }
-//         } 
-
-//         toggleElement(button)
-//     })
-// })
-
 // BURGER MENU
 
 const menuIcon = document.querySelector('.burger-menu-btn');
@@ -44,6 +6,25 @@ const menu = document.querySelector('.navbar-burger-links');
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
     menu.classList.toggle('active');
+});
+
+// BUY FORM
+
+const buyBtn = document.getElementById('buy');
+const buyForm = document.querySelector('.buy-form');
+
+buyBtn.addEventListener('click', () => {
+    buyForm.classList.add('active')
+})
+
+// Закрываем при клике вне формы
+document.addEventListener('click', (event) => {
+  if (
+    !buyForm.contains(event.target) && 
+    !buyBtn.contains(event.target)
+  ) {
+    buyForm.classList.remove('active');
+  }
 });
 
 // FAQ DROP
@@ -78,4 +59,46 @@ document.querySelectorAll('.faq-item-arrow-switch').forEach(img => {
   img.addEventListener('click', () => {
     toggleContent(img);
   });
+});
+
+// VIDEO SCROLL
+
+document.addEventListener('DOMContentLoaded', function() {
+  // const slider = document.querySelector('.video');
+  const images = document.querySelectorAll('.video-pic img');
+  const prevBtn = document.querySelector('.prev-switch');
+  const nextBtn = document.querySelector('.next-switch');
+  
+  let currentIndex = 0; // Текущий индекс изображения
+  
+  // Функция для показа изображения по индексу
+  function showImage(index) {
+    // Скрываем все изображения
+    images.forEach(img => img.classList.remove('active'));
+    
+    // Показываем нужное изображение
+    images[index].classList.add('active');
+    currentIndex = index;
+  }
+  
+  // Обработчик для кнопки «вперёд»
+  nextBtn.addEventListener('click', function() {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= images.length) {
+      nextIndex = 0; // Возвращаемся к первому изображению
+    }
+    showImage(nextIndex);
+  });
+  
+  // Обработчик для кнопки «назад»
+  prevBtn.addEventListener('click', function() {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) {
+      prevIndex = images.length - 1; // Переходим к последнему изображению
+    }
+    showImage(prevIndex);
+  });
+  
+  // Показываем первое изображение при загрузке
+  showImage(0);
 });

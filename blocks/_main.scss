@@ -1,68 +1,69 @@
 // TOP SECTION
 
-@use '../stuff/mixins' as *;
+@use '../stuff/mixins'as *;
 
-.top-section{
+.top-section {
     margin-top: 20px;
     margin-bottom: 100px;
-    
+
     @include flex-center(row, space-between, stretch, 20px);
 
-    .top-section-block{
+    .top-section-block {
         @include flex-center(column, center, center, 40px);
 
         padding: 50px;
 
-        &-text{
+        &-text {
             @include flex-center(column, center, center, 5px);
         }
     }
 
-    &-img{
+    &-img {
         flex: 1;
 
-        img{
+        img {
             height: 100%;
         }
     }
 }
 
-.top-section-mobile{
+.top-section-mobile {
     display: none;
 
     padding: 25px 20px;
     margin-bottom: 40px;
 
-    &-pic{
+    &-pic {
         width: 100%;
-        img{
+
+        img {
             width: 100%;
         }
-        
+
     }
 
-    &-text{
+    &-text {
         align-self: flex-start
     }
 
-    &-btn{
+    &-btn {
         @include flex-center(row, center, flex-start, 15px);
 
         height: 45%;
 
-        &-btn{
+        &-btn {
             width: 50%;
 
-            .buy{
+            .buy {
                 margin-left: 0;
             }
-            
+
         }
 
-        &-img{
+        &-img {
             width: 50%;
 
-            img{
+            img {
                 width: 100%;
                 height: 100%;
             }
@@ -72,30 +73,29 @@
 
 // FEST SECTION
 
-.fest{
+.fest {
     margin-bottom: 100px;
 
-    .fest-wrap{
-        @include flex-center(row, space-between, center, 20px);
+    .fest-wrap {
+        @include flex-center(row, space-between, stretch, 20px);
 
-        &-block{
+        &-block {
             @include flex-center(column, center, center, 30px);
 
             padding: 50px;
 
-            height: 364px;
             width: 50%;
 
-            span{
+            span {
                 font-weight: 700;
             }
         }
 
-        &-img{
+        &-img {
             width: 50%;
-            
-            img{
-                height: 364px;
+
+            img {
+                height: 100%;
                 width: 100%;
             }
         }
@@ -104,30 +104,55 @@
 
 // VIDEO
 
-.video{
-    @include flex-center(row, center, center, 20px);
+.video {
+    @include flex-center(row, space-between, center, 20px);
 
     border-radius: 100px;
 
     margin-bottom: 60px;
+
+    .video-pic {
+        position: relative;
+        width: 100%;
+        height: 600px;
+
+        overflow: hidden;
+
+        border-radius: 100px;
+
+        .active {
+            opacity: 1;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    }
 }
 
 // PROGRAMM
 
-.programm{
+.programm {
     margin-bottom: 100px;
 
-    &-wrap{
+    &-wrap {
         @include flex-center(column, center, center, 20px);
 
-        &-date{
+        &-date {
             @include flex-center(row, flex-start, center, 50px);
 
-            li{
+            li {
                 padding: 12px 12px 12px 0;
             }
 
-            span{
+            span {
                 margin-left: 50px;
             }
         }
@@ -136,38 +161,39 @@
 
 // TICKETS
 
-.tickets{
+.tickets {
+    position: relative;
     margin-bottom: 100px;
 
-    &-wrap{
+    &-wrap {
         @include flex-center(row, space-between, center, 20px);
 
         margin-bottom: 50px;
 
-        &-date{
+        &-date {
             @include flex-center(column, space-between, start, 30px);
 
-            .tickets-date-text h4{
+            .tickets-date-text h4 {
                 margin-bottom: 10px;
             }
 
-            .tickets-date-ticket{
+            .tickets-date-ticket {
                 @include flex-center(column, flex-start, stretch, 30px);
 
                 width: 100%;
 
-                &-person{
+                &-person {
                     @include flex-center(row, space-between, flex-start, 30px);
 
-                    .tickets-date-ticket-text h4{
+                    .tickets-date-ticket-text h4 {
                         margin-bottom: 10px;
                     }
 
-                    .tickets-date-ticket-count{
+                    .tickets-date-ticket-count {
                         @include flex-center(row, center, flex-start, 10px);
                         gap: 10px;
 
-                        p{
+                        p {
                             margin-top: 3px;
                             font-weight: 600;
                         }
@@ -178,21 +204,61 @@
     }
 }
 
+.buy-form {
+    display: none;
+
+    // @include flex-center(column, center, center, 30px);
+
+    padding: 50px;
+
+    width: 55%;
+    height: 100%;
+
+    position: absolute;
+    top: 5%;
+    right: 23%;
+
+    background: var(--color-white);
+
+    .buy-form-list {
+        @include flex-center(column, center, center, 30px);
+
+        input {
+            width: 100%;
+            padding: 20px;
+
+            background: var(--color-pink);
+            color: var(--color-black);
+
+            border-radius: 50px;
+            border: none;
+
+            font-size: 20px;
+        }
+    }
+}
+
+.buy-form.active {
+    @include flex-center(column, center, center, 30px);
+}
+
+
 // FAQ
 
-.faq{
+.faq {
     margin-bottom: 100px;
 
-    .faq-item-title-text{
+    .faq-item-title-text {
         @include flex-center(row, space-between, center);
 
         margin-top: 30px;
 
-        .faq-item-text{
+        .faq-item-text {
             font-weight: 600;
         }
     }
-    .faq-item-text-hidden{
+
+    .faq-item-text-hidden {
         margin-top: 20px;
 
         // display: none;
@@ -206,10 +272,10 @@
 
 // CONTACTS
 
-.contacts{
+.contacts {
     margin-bottom: 100px;
 
-    .map{
+    .map {
         width: 100%;
         height: 670px;
 
